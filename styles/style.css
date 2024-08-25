@@ -1,0 +1,97 @@
+/* :root (CSS 변수) */
+:root {
+  --header-height: 84px;
+  --nav-width: 240px;
+}
+
+/* reset (브라우저 기본 스타일 초기화) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: 0;
+    background: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    height: 8000px;
+    padding-top: var(--header-height);
+    padding-left: var(--nav-width);
+
+    
+}
+
+/* scss -> nested css */
+
+/* 햄버거 메뉴를 클릭해서 메뉴가 접혔을 시 */
+body.hamburger-off {
+    padding-left: 0;
+}
+
+body.hamburger-off .main-left-side {
+    display: none;
+}
+
+body.hamburger-off header .logo-area {
+    background-color: #000;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* vw, vh (view-port: 디바이스 화면 사이즈) */
+.main-left-side{
+    width: var(--nav-width);
+    height: calc(100vh - var(--header-height));
+    background-color: blue;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+ 
+}
+
+
+.main-content{
+    width: 100%;
+    background-color: blanchedalmond;
+}
+
+/* header */
+header .logo-area {
+    width: var(--nav-width);
+    height: var(--header-height);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #eee;
+
+  
+}
+
+header .logo-area .btn-hamburger {
+}
+
+header .logo-area .logo {
+    background-color: gray;
+}
+
+header .header-search {}
+
+header .gnb-menu {}
